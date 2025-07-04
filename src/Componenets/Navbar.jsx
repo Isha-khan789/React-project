@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { CgMenuRight } from "react-icons/cg";
-import { motion } from "framer-motion";
+import {motion } from "framer-motion";
+
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);

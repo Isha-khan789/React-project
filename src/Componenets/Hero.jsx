@@ -1,4 +1,4 @@
-import { section } from "framer-motion/client";
+import { MdArrowCircleRight } from "react-icons/md";
 import React from "react";
 import heroImg from "../assets/hero.webp";
 
@@ -18,6 +18,12 @@ const Hero = () => {
             walk you through the basics in our new mindful guide on how to
             meditate
           </p>
+          <button className="bg-primary text-white py-4 px-9 font-medium rounded-md hover:bg-primary"> 
+            <a href="#contact" className="flex gap-1 items-center">
+                <span>Get started</span>
+                <MdArrowCircleRight />
+            </a>
+          </button>
         </div>
         <div className="md:w-1/2 h-full">
           <img src={heroImg} alt="hero image" className="w-full object-cover" />
