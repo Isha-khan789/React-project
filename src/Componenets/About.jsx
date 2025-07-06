@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import thumbnailImg from "../assets/video-thumbnail.webp";
 import { BsFillPlayFill } from "react-icons/bs";
 import { MdArrowCircleRight } from "react-icons/md";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilies/animationVariants";
 
 const About = () => {
   const [isVideoplaying, setisVideoplaying] = useState(false);
@@ -16,7 +18,13 @@ const About = () => {
 
   return (
     <div id="about" className="bg-[#f7f8fc] pb-16 pt-20">
-      <div className="container mx-auto">
+      <motion.div
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="container mx-auto"
+      >
         {/* Flex container holding video and text side by side */}
         <div className="py-12 px-4 md:w-4/5 mx-auto flex flex-col md:flex-row items-center gap-8">
           {/* Video / Thumbnail */}
@@ -81,7 +89,7 @@ const About = () => {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };

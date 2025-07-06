@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilies/animationVariants";
 
 const Pricing = () => {
   const handleScrollToContact=()=>{
@@ -61,7 +63,14 @@ const Pricing = () => {
           </p>
         </div>
         {/* packagesss */}
-        <div className="flex flex-col md:w-5/6 mx-auto md:flex-row gap-8 pb-12">
+        <motion.div 
+        variants={fadeIn('left',0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{once:false,amount:0.7}}
+        
+        
+        className="flex flex-col md:w-5/6 mx-auto md:flex-row gap-8 pb-12">
         {
             packages.map((pkg,index) =>(
               <div key={index} className="bg-white rounded-lg p-6 flex-1  shadow-lg">
@@ -85,7 +94,7 @@ const Pricing = () => {
             ))
           }
 
-        </div>
+        </motion.div>
       </div>
     </div>
   );

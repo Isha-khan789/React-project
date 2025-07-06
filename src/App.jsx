@@ -7,6 +7,7 @@ import Pricing from "./Componenets/Pricing";
 import Services from "./Componenets/Services";
 import Testimonials from "./Componenets/Testimonials";
 import Workind_step from "./Componenets/Working_step";
+import Footer from "./Componenets/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Pricing />
         <Testimonials />
         <Contact/>
+        <Footer/>
        
       </div>
     </>

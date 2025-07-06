@@ -4,12 +4,19 @@ import serviceImg1 from "../assets/service1.webp";
 import serviceImg2 from "../assets/service2.webp";
 import serviceImg3 from "../assets/service3.webp";
 import serviceImg4 from "../assets/service4.webp";
+import {motion} from "framer-motion"
+import { fadeIn } from "../utilies/animationVariants";
 
 const Services = () => {
   return (
     <div id="services" className="bg-[#f7f8fc]">
       <div className="pt-28 px-4 container mx-auto">
-        <div className="text-center space-x-5">
+        <motion.div 
+          variants={fadeIn('down',0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{once:false,amount:0.7}}
+        className="text-center space-x-5">
           <h2 className="text-4xl font-bold font-secondary text-herobg">
             What can we do together
           </h2>
@@ -19,18 +26,30 @@ const Services = () => {
             nisi cupiditate veritatis accusantium natus nam nesciunt mollitia
             architecto nostrum saepe et.
           </p>
-        </div>
+        </motion.div>
         <div className="py-12 md:w-4/5 mx-auto">
           <Tabs>
-            <TabList className="flex flex-wrap justify-between items-center md:gap-8">
+            <motion.TabList
+            variants={fadeIn('up',0.3)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{once:false,amount:0.7}}
+            
+             className="flex flex-wrap justify-between items-center md:gap-8">
               <Tab>Couple Counselling</Tab>
               <Tab>Parenting Skills</Tab>
               <Tab>Feeling stuck</Tab>
               <Tab>Self Confidence</Tab>
-            </TabList>
+            </motion.TabList>
 
             <TabPanel>
-              <div className=" flex flex-col md:flex-row gap-8 mt-8">
+              <motion.div 
+              variants={fadeIn('up',0.2)}
+                      initial="hidden"
+                      whileInView={"show"}
+                      viewport={{once:false,amount:0.7}}
+              
+              className=" flex flex-col md:flex-row gap-8 mt-8">
                 <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Couple Counselling
@@ -57,10 +76,17 @@ const Services = () => {
                     alt=""
                   />
                 </div>
-              </div>
+              </motion.div>
             </TabPanel>
+
             <TabPanel>
-              <div className=" flex flex-col md:flex-row gap-8 mt-8">
+              <motion.div
+              variants={fadeIn('up',0.2)}
+                      initial="hidden"
+                      whileInView={"show"}
+                      viewport={{once:false,amount:0.7}}
+              
+              className=" flex flex-col md:flex-row gap-8 mt-8">
                 <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Parenting Skills
@@ -87,10 +113,16 @@ const Services = () => {
                     alt=""
                   />
                 </div>
-              </div>
+              </motion.div>
             </TabPanel>
             <TabPanel>
-              <div className=" flex flex-col md:flex-row gap-8 mt-8">
+
+              <motion.div 
+              variants={fadeIn('up',0.2)}
+                      initial="hidden"
+                      whileInView={"show"}
+                      viewport={{once:false,amount:0.7}}
+              className=" flex flex-col md:flex-row gap-8 mt-8">
                 <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Feeling stuck
@@ -117,10 +149,15 @@ const Services = () => {
                     alt=""
                   />
                 </div>
-              </div>
+              </motion.div>
             </TabPanel>
             <TabPanel>
-              <div className=" flex flex-col md:flex-row gap-8 mt-8">
+              <motion.div 
+              variants={fadeIn('up',0.2)}
+                      initial="hidden"
+                      whileInView={"show"}
+                      viewport={{once:false,amount:0.7}}
+              className=" flex flex-col md:flex-row gap-8 mt-8">
                 <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Self Confidence
@@ -147,7 +184,7 @@ const Services = () => {
                     alt=""
                   />
                 </div>
-              </div>
+              </motion.div>
             </TabPanel>
           </Tabs>
         </div>

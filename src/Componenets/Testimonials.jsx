@@ -2,6 +2,8 @@ import React from 'react'
 import { BsChatQuoteFill } from "react-icons/bs";
 import review1 from '../assets/review1.webp'
 import review2 from '../assets/review2.webp'
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilies/animationVariants";
 
 
 const  testimonials =[
@@ -26,7 +28,13 @@ const Testimonials = () => {
   return (
     <div id='testimonials' className='bg-[#f7f8fc] py-12'>
         <div className='container mx-auto'>
-           <div className="text-center mb-12">
+           <motion.div
+           variants={fadeIn('up',0.2)}
+                                 initial="hidden"
+                                 whileInView={"show"}
+                                 viewport={{once:false,amount:0.7}}
+           
+           className="text-center mb-12">
           <h2 className="text-4xl font-bold font-secondary mb-3">What our Clients says</h2>
           <p className=" text-lg mb-12 md:w-2/3 mx-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum
@@ -34,7 +42,7 @@ const Testimonials = () => {
             obcaecati! Delectus deserunt ad pariatur corporis id beatae qui
             incidunt? Autem.
           </p>
-        </div>
+        </motion.div>
         <div className='flex flex-col md:w-4/5 mx-auto md:flex-row md:gap-12 gap-8'>
           {
             testimonials.map((testimonials,index)=>(
@@ -43,7 +51,12 @@ const Testimonials = () => {
                   <BsChatQuoteFill className=' size-12 text-primary' />
 
                 </div>
-                <div className='flex flex-col space-y-3 mb-4' >
+                <motion.div 
+                variants={fadeIn('left',0.2)}
+                                      initial="hidden"
+                                      whileInView={"show"}
+                                      viewport={{once:false,amount:0.7}}
+                className='flex flex-col space-y-3 mb-4' >
                   <p className='text-lg mb-2'>{testimonials.review}</p>
                   <div className='flex gap-1'>
                     <img src={testimonials.image} alt="rewier image" className=' size-16 rounded-full object-cover mr-4' />
@@ -52,7 +65,7 @@ const Testimonials = () => {
                       <p className='text-gray-600'>{testimonials.location}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             ))
           }
